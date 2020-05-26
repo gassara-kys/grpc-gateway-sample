@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example.greeting;
+option go_package = "github.com/gassara-kys/grpc-sample/proto/greeting";
+
+service Greeting {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string message = 1;
+}
+
+message HelloResponse {
+  string message = 2;
+}

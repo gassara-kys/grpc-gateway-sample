@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  gateway:
+    networks:
+      sample-net:
+    build: src/gateway
+    container_name: gateway
+    depends_on:
+      - greeting
+    environment:
+      - PORT=8080
+      - GREETING_SVC_ADDR=greeting:8081
+    ports:
+      - "8080:8080"
+
+  greeting:
+    networks:
+      sample-net:
+    build: src/greeting
+    container_name: greeting
+    environment:
+      - PORT=8081
+    ports:
+      - "8081"
+  
+networks:
+  sample-net:
+    driver: bridge
+    attachable: true

@@ -28,7 +28,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| message | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
